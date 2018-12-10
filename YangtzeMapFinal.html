@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>ChinaMap</title>
+
+<h1 align="center">Three Gorges Dam: The Human Story</h1>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+        integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin=""/>
+
+        <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+        integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+        crossorigin=""></script>
+
+        <style type="text/css">
+
+        html, body { margin: 0; padding: 0; height: 100%; }
+
+        #map { min-height: 100%; }
+
+                <style>
+                  /* Optional: adjust the values below to change the appearance of the legend */
+                  .legend {
+                      padding: 6px 8px;
+                      line-height: 18px;
+                      background: rgba(255,255,255,0.9);
+                      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                      border-radius: 5px;
+                  }
+
+                   /* Optional: adjust the values below to change the appearance of the legend color boxes */
+                   .legend i {
+                      width: 18px;
+                      height: 18px;
+                      float: left;
+                      margin-right: 8px;
+                      opacity: 0.7;
+                  }
+                </style>
+
+<script type="text/javascript" src="data.js"></script>
+
+    </head>
+
+    <body>
+        <div id="map" style="height: 500px"></div>
+
+        <script type="text/javascript">
+          var map = L.map('map', {
+              center: [30.808756,111.0632412],
+              zoom: 6
+          });
+
+          L.geoJson(data).addTo(map);
+
+                   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+           attribution: 'Map data � OpenStreetMap contributors, CC-BY-SA, Imagery � Mapbox',
+           maxZoom: 18,
+           minZoom: 1,
+           id: 'mapbox.satellite',
+           accessToken: 'pk.eyJ1IjoibS1lcm5zdCIsImEiOiJjamxmcm5uangxMDFtM3dwaGhkOHNvenptIn0.uDyJ-MnwnMfM8W49s4qXLQ'
+         }).addTo(map);
+
+
+            var damIcon = L.icon({
+                iconUrl: 'dam.png', // url that links to the icon image file
+                iconSize:     [38, 38], // size of the icon image in pixels
+                iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+                popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+            });
+            var placeholderIcon = L.icon({
+                iconUrl: 'placeholder.png', // url that links to the icon image file
+                iconSize:     [38, 38], // size of the icon image in pixels
+                iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+                popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+
+            });
+            var yellowpinIcon = L.icon({
+                iconUrl: 'yellowpin.png', // url that links to the icon image file
+                iconSize:     [38, 38], // size of the icon image in pixels
+                iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+                popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+
+            });
+            var marker1 = L.marker([30.826479,110.9921153], {icon: damIcon}).addTo(map);
+            var marker2 = L.marker([31.0096208,108.5527904], {icon: placeholderIcon}).addTo(map);
+            var marker3 = L.marker([30.6954351,108.1126358], {icon: placeholderIcon}).addTo(map);
+            var marker4 = L.marker([31.0961255,112.1993761], {icon: yellowpinIcon}).addTo(map);
+            var marker5 = L.marker([31.0217786,121.2225089], {icon: yellowpinIcon}).addTo(map);
+            var marker6 = L.marker([31.4000184,121.2424335], {icon: yellowpinIcon}).addTo(map);
+            var marker7 = L.marker([31.0484568,121.7457146], {icon: yellowpinIcon}).addTo(map);
+            var marker8 = L.marker([30.9044616,121.5523126], {icon: yellowpinIcon}).addTo(map);
+            var marker9 = L.marker([31.6379293,121.5141821], {icon: yellowpinIcon}).addTo(map);
+            var marker10 = L.marker([30.8293682,121.2360822], {icon: yellowpinIcon}).addTo(map);
+            var marker11 = L.marker([31.1397666,121.1019083], {icon: yellowpinIcon}).addTo(map);
+            var marker12 = L.marker([31.2368072,121.4719115], {icon: placeholderIcon}).addTo(map);
+            var marker13 = L.marker([31.0860021,110.3064745], {icon: placeholderIcon}).addTo(map);
+            var marker14 = L.marker([30.7916643,110.3128274], {icon: placeholderIcon}).addTo(map);
+            var marker15 = L.marker([28.6247231,104.4148052], {icon: damIcon}).addTo(map);
+            var marker16 = L.marker([35.8203887,96.5858904], {icon: placeholderIcon}).addTo(map);
+            var marker17 = L.marker([30.6029709,114.2292242], {icon: placeholderIcon}).addTo(map);
+            var marker18 = L.marker([30.9044616,121.5523126], {icon: yellowpinIcon}).addTo(map);
+            var marker19 = L.marker([31.6379293,121.5141821], {icon: yellowpinIcon}).addTo(map);
+            var marker20 = L.marker([30.8293682,121.2360822], {icon: yellowpinIcon}).addTo(map);
+            var marker21 = L.marker([29.9123494,107.6636066], {icon: placeholderIcon}).addTo(map);
+            var marker22 = L.marker([31.0982804,110.3053086], {icon: placeholderIcon}).addTo(map);
+            var marker23 = L.marker([31.0860021,110.3064745], {icon: placeholderIcon}).addTo(map);
+            var marker24 = L.marker([30.7916643,110.3128274], {icon: placeholderIcon}).addTo(map);
+            var marker25 = L.marker([28.6247231,104.4148052], {icon: damIcon}).addTo(map);
+            var pic1 = '<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Dreischluchtendamm_hauptwall_2006.jpg" alt="Sunwahduck" width="250">';
+            var pic2 = '<img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Yunyang_Yangtze_River_Bridge.JPG" alt="Hellosushi" width="250">';
+            var pic3 = '<img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Wanzhou_Yangtze_River_Railway_Bridge1.JPG" alt="Hopleaf654" width="250">';
+            var pic4 = '<img src="https://upload.wikimedia.org/wikipedia/commons/6/65/%E5%A4%A7%E6%AD%A6%E6%B1%89_WuHan%2C_HuBei_Province_14-08-11_-_panoramio.jpg" alt="New_York_Pizza_Slices" width="250">';
+            var pic5 = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Songjiang%2C_Shanghai%2C_China_-_panoramio_%2817%29.jpg" alt="Fourbelly2" width="250">';
+            var pic6 = '<img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Jiading%2C_Shanghai%2C_China_-_panoramio_%281%29.jpg" alt="Overeasy" width="250">';
+            var pic7 = '<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/%E5%A4%A7%E5%9B%A2%E9%95%87%E8%91%A3%E6%9D%91%E6%A1%A5_-_panoramio.jpg" alt="Revolution3452" width="250">';
+            var pic8 = '<img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Fengxian_Huating_Seawall_-_25_Sept_2018_10.jpg" alt="Amistad2" width="250">';
+            var pic9 = '<img src="https://upload.wikimedia.org/wikipedia/commons/4/47/%E8%A5%BF%E6%B2%99%E6%B9%BF%E5%9C%B0%EF%BC%8C%E5%B4%87%E6%98%8E%EF%BC%8C%E4%B8%8A%E6%B5%B7_Chongming%2C_ShangHai_06-04-13_-_panoramio.jpg" alt="Krungthep" width="250">';
+            var pic10 = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Shanghai_Jinshan_IMG_8548_Fenjing_commune_-_Huijiabang_area.jpg" alt="Elhabanero" width="250">';
+	          var pic11 = '<img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Qingpu%2C_Shanghai%2C_China_-_panoramio_%282%29.jpg" alt="Sunwahduck" width="250">';
+            var pic12 = '<img src="https://upload.wikimedia.org/wikipedia/commons/1/18/20090906_Shanghai_4728.jpg" alt="Hellosushi" width="250">';
+            var pic13 = '<img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Yangtze_River_in_Badong_County%2C_Hubei%2C_picture11.jpg" alt="Hopleaf654" width="250">';
+            var pic14 = '<img src="https://upload.wikimedia.org/wikipedia/commons/6/65/%E5%A4%A7%E6%AD%A6%E6%B1%89_WuHan%2C_HuBei_Province_14-08-11_-_panoramio.jpg" alt="New_York_Pizza_Slices" width="250">';
+            var pic15 = '<img src="https://upload.wikimedia.org/wikipedia/commons/0/04/2016_Oct_Fengman_Dam_in_Jilin%2C_China.jpg" alt="Fourbelly2" width="250">';
+            var pic16 = '<img src="https://upload.wikimedia.org/wikipedia/commons/4/47/TIB-lhasabahn-qinghai-1.jpg" alt="Sunwahduck" width="250">';
+            var pic17 = '<img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Qiaokou%2C_Wuhan%2C_Hubei%2C_China_-_panoramio_%281%29.jpg" alt="Revolution3452" width="250">';
+            var pic18 = '<img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Fengxian_Huating_Seawall_-_25_Sept_2018_10.jpg" alt="Amistad2" width="250">';
+            var pic19 = '<img src="https://upload.wikimedia.org/wikipedia/commons/4/47/%E8%A5%BF%E6%B2%99%E6%B9%BF%E5%9C%B0%EF%BC%8C%E5%B4%87%E6%98%8E%EF%BC%8C%E4%B8%8A%E6%B5%B7_Chongming%2C_ShangHai_06-04-13_-_panoramio.jpg" alt="Krungthep" width="250">';
+            var pic20 = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Shanghai_Jinshan_IMG_8548_Fenjing_commune_-_Huijiabang_area.jpg" alt="Elhabanero" width="250">';
+            var pic21 = '<img src="https://upload.wikimedia.org/wikipedia/commons/8/80/CN_yang_fengdu-neu.jpg" alt="Sunwahduck" width="250">';
+            var pic22 = '<img src="https://upload.wikimedia.org/wikipedia/commons/1/18/20090906_Shanghai_4728.jpg" alt="Hellosushi" width="250">';
+            var pic23 = '<img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Yangtze_River_in_Badong_County%2C_Hubei%2C_picture11.jpg" alt="Hopleaf654" width="250">';
+            var pic24 = '<img src="https://upload.wikimedia.org/wikipedia/commons/4/45/The_Little_Three_Gorges_along_Daning_river_in_Wushan%2CChongqing.JPG" alt="New_York_Pizza_Slices" width="250">';
+            var pic25 = '<img src="https://upload.wikimedia.org/wikipedia/commons/0/04/2016_Oct_Fengman_Dam_in_Jilin%2C_China.jpg" alt="Fourbelly2" width="250">';
+            marker1.bindPopup('<p style="color:black; font-weight:bold"> Three Gorges Dam <br> Construction began in 1994 and was completed in 2006. Generating 22,500 MW of electricity, the dam is the largest power station in the world. In addition to greenhouse gas-free energy production, the dam has helped mitigate flooding risk downstream. The dam remains controversial as, since its completion, it has caused seismic activity that has caused loss of life. In addition, nearly 1.3 million people have been displaced prior to construction, as well as from flooding upstream. </p>' + pic1);
+            marker2.bindPopup('<p style="color:black; font-weight:bold"> Yunyang County <br> Site of dam-related flooding, causing displacement of residents. </p>' + pic2);
+            marker3.bindPopup('<p style="color:black; font-weight:bold"> Wanzhou District <br> Site of dam-related flooding, causing displacement of residents. </p>' + pic3);
+            marker4.bindPopup('<p style="color:black; font-weight:bold"> Hubei Province <br> Served as a re-settlement site for many residents displaced by dam-related flooding. </p>' + pic4);
+            marker5.bindPopup('<p style="color:black; font-weight:bold"> Songjiang District </p>' + pic5);
+            marker6.bindPopup('<p style="color:black; font-weight:bold"> Jiading District</p>' + pic6);
+            marker7.bindPopup('<p style="color:black; font-weight:bold"> Nanhui District</p>' + pic7);
+            marker8.bindPopup('<p style="color:black; font-weight:bold"> Fengxian District</p>' + pic8);
+            marker9.bindPopup('<p style="color:black; font-weight:bold"> Island of Chongming</p>' + pic9);
+            marker10.bindPopup('<p style="color:black; font-weight:bold"> Jinshan District</p>' + pic10);
+            marker11.bindPopup('<p style="color:black; font-weight:bold"> Qingpu </p>' + pic11);
+            marker12.bindPopup('<p style="color:black; font-weight:bold"> Shanghai City Center <br> Many of those relocated and displaced by dam construction and flooding came to the Shanghai area. Unfortunately, most were placed in areas far from the city center, leaving them with little economic opportunity. These sites are represented by the surrounding yellow pins. </p>' + pic12);
+            marker13.bindPopup('<p style="color:black; font-weight:bold"> Badong County <br> Nov 2008: Landslide of 4,000 cubic yards of soil near entrance to a railway tunnel buries a bus. 30 people killed. </p>' + pic13);
+            marker14.bindPopup('<p style="color:black; font-weight:bold"> Miaohe - 2007: 99 villagers displaced by seismic activity related to reservoir level adjustment for summer floods. </p>' + pic14);
+            marker15.bindPopup('<p style="color:black; font-weight:bold"> Xiangjiaba Dam <br> Facing pressure from the negative effects of the Three Gorges Dam, a moritorium on dam building is now in effect between this location and Three Gorges. </p>' + pic15);
+            marker16.bindPopup('<p style="color:black; font-weight:bold"> Qinghai Province <br> The snowpack of the Tibetan Plateau is a primary source of the freshwater available in the Yangtze basin. Amid rising global temperatures, an increase in melt has exacerbated the issue of flooding. </p>' + pic16);
+            marker17.bindPopup('<p style="color:black; font-weight:bold"> Wuhan <br> Major flooding covered Wuhan for three months in 1954, a city of 8 million residents, and was an example of one of the flood events hoped to be controlled by the Three Gorges Dam. </p>' + pic17);
+            marker18.bindPopup('<p style="color:black; font-weight:bold"> Fengxian District</p>' + pic18);
+            marker19.bindPopup('<p style="color:black; font-weight:bold"> Island of Chongming</p>' + pic19);
+            marker20.bindPopup('<p style="color:black; font-weight:bold"> Jinshan District</p>' + pic20);
+            marker21.bindPopup('<p style="color:black; font-weight:bold"> Fengdu <br> Site of dam-related flooding, causing displacement of residents. </p>' + pic21);
+            marker22.bindPopup('<p style="color:black; font-weight:bold"> Huangtupo <br> Originally a site of resettlement for displaced residents in 1998, citizens here were again forced to relocate in 2012. </p>' + pic12);
+            marker23.bindPopup('<p style="color:black; font-weight:bold"> Badong County <br> Nov 2008: Landslide of 4,000 cubic yards of soil near entrance to a railway tunnel buries a bus. 30 people killed. </p>' + pic13);
+            marker24.bindPopup('<p style="color:black; font-weight:bold"> Miaohe - 2007: 99 villagers displaced by seismic activity related to reservoir level adjustment for summer floods. </p>' + pic24);
+            marker25.bindPopup('<p style="color:black; font-weight:bold"> Xiangjiaba Dam <br> Facing pressure from the negative effects of the Three Gorges Dam, a moritorium on dam building is now in effect between this location and Three Gorges. </p>' + pic15);
+
+
+        </script>
+
+   </body>
+</html>
