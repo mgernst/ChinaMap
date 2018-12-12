@@ -37,6 +37,22 @@
                       margin-right: 8px;
                       opacity: 0.7;
                   }
+		
+		        <style>
+        .info {
+            padding: 6px 8px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: white;
+            background: rgba(255,255,255,0.8);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            width: 150px;
+        }
+        .info h4 {
+            margin: 0 0 5px;
+            color: #FFFFFF;
+        }
+		
                 </style>
 
 <script type="text/javascript" src="data.js"></script>
@@ -159,7 +175,31 @@
             marker24.bindPopup('<p style="color:black; font-weight:bold"> Miaohe - 2007: 99 villagers displaced by seismic activity related to reservoir level adjustment for summer floods. </p>' + pic24);
             marker25.bindPopup('<p style="color:black; font-weight:bold"> Xiangjiaba Dam <br> Facing pressure from the negative effects of the Three Gorges Dam, a moritorium on dam building is now in effect between this location and Three Gorges. </p>' + pic15);
 
+        var info = L.control();
 
+              info.onAdd = function (map) {
+                  this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+                  this.update();
+                  return this._div;
+              };
+
+              // method that we will use to update the control
+              // For the legend, it is static html code, <img> and <p> tags are used to show the markers and descriptions
+              // &nbsp; defines a space in html (escape character)
+              info.update = function (popup) {
+                  this._div.innerHTML = '<h4>Legend</h4>' +
+                          '<img src="placeholder.png" alt="" style="vertical-align:middle; height:38px">'+'&nbsp;'+
+                      ' <font color="white"<p style="display: inline; vertical-align:middle; height:38px">Displaced Residents</p>'+
+                      '<img src="yellowpin.png" alt="" style="vertical-align:middle; height:38px">'+'&nbsp;'+
+                  ' <font color="white"<p style="display: inline; vertical-align:middle; height:38px">Resettlement Sites</p>'+
+                  '<img src="dam.png" alt="" style="vertical-align:middle; height:38px">'+'&nbsp;'+
+              ' <font color="white"<p style="display: inline; vertical-align:middle; height:38px">Major Dam</p>';
+
+              };
+
+              info.addTo(map);
+
+		
         </script>
 
    </body>
